@@ -8,7 +8,6 @@ function PokeListWrapper() {
   const [data, setData] = useState(pokeDatas);
   useEffect(() => {
     const filterData = pokeDatas.filter((data) => data.name.includes(filter));
-    console.log(filterData);
     setData(filterData);
   }, [filter, pokeDatas]);
   return (

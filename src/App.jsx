@@ -11,7 +11,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />}></Route>
-          <Route path="/id" element={<PokemonPage />}></Route>
+          <Route path="/:id" element={<PokemonPage />}></Route>
         </Routes>
         <DarkModeButton />
         <Footer />
