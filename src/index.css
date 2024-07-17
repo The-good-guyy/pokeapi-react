@@ -20,20 +20,30 @@
 }
 .vaporWaveCard header {
   position: relative;
-  padding-top: 15rem;
+  padding-top: 18rem;
   background: linear-gradient(45deg, #94d0ff, #ff6ad5);
   overflow: hidden;
   perspective: 400px;
 }
-.vaporWaveCard header::before {
+/* .vaporWaveCard header::before {
   content: '';
   position: absolute;
   top: -5%;
   left: -5%;
   width: 110%;
   height: 110%;
-  /* background: url('https://source.unsplash.com/featured/city') center; */
-  background: --bgurl;
+  background: url('https://source.unsplash.com/featured/city') center;
+  background-size: cover;
+  mix-blend-mode: multiply;
+  animation: swing 4s alternate ease-in-out infinite;
+} */
+.vaporWaveCard header img {
+  content: '';
+  position: absolute;
+  top: -15%;
+  left: -5%;
+  width: 120%;
+  height: 120%;
   background-size: cover;
   mix-blend-mode: multiply;
   animation: swing 4s alternate ease-in-out infinite;
@@ -64,9 +74,9 @@
   text-align: right;
   color: #fff;
 }
-.vaporWaveCard header img.profile {
+/* .vaporWaveCard header img.profile {
   width: 100%;
-}
+} */
 .vaporWaveCard .desc {
   padding: 1rem;
 }

@@ -1,8 +1,24 @@
-import VaporWaveCard from './VaporWaveCard';
-function Home(props) {
+import PokeList from './PokeList';
+import { useEffect } from 'react';
+import { useStore } from '../store';
+import LoadMore from './LoadMore';
+function Home() {
+  const updateData = useStore((state) => state.increasePokedata);
+  useEffect(() => {
+    fetch('https://pokeapi.co/api/v2/pokemon?limit=20&offset=0')
+      .then((response) => response.json())
+      .then((data) => {
+        updateData(data.results);
+      });
+  }, []);
   return (
-    <div className="max-w-screen-2xl flex flex-wrap items-start justify-between mx-auto p-4 bg-[#1F2544] text-[#81689D] min-h-screen">
-      <VaporWaveCard url="before:bg-[url('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg')]" />
+    <div className="flex flex-col bg-[#474F7A] justify-center content-between items-center">
+      <div className="max-w-screen-2xl flex flex-wrap items-start justify-between mx-auto p-4 bg-[#1F2544] text-[#81689D] min-h-screen">
+        <PokeList />
+      </div>
+      <div className="bg-[#1F2544] max-w-screen-2xl w-full">
+        <LoadMore />
+      </div>
     </div>
   );
 }
