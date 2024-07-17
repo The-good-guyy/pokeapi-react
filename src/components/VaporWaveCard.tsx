@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import pokeball from '/pokeball.svg';
 import { useStore } from '../store';
-function VaporWaveCard({ url, name = 'Bulbalsaur', order = '1' }) {
+function VaporWaveCard({ url, name, order }) {
   const type = useStore((state) => state.type);
   return (
     <Link to={`/`}>
