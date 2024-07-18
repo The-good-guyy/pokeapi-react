@@ -7,7 +7,7 @@ import PokemonPage from './components/PokemonPage';
 function App() {
   return (
     <BrowserRouter>
-      <div className="bg-[#474F7A]">
+      <div className=" dark:bg-[#474F7A] bg-white">
         <Header />
         <Routes>
           <Route path="/" element={<Home />}></Route>
